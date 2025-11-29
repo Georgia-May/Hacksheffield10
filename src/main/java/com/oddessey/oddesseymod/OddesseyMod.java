@@ -26,10 +26,10 @@ import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod(ExampleMod.MODID)
-public final class ExampleMod {
+@Mod(OddesseyMod.MODID)
+public final class OddesseyMod {
     // Define mod id in a common place for everything to reference
-    public static final String MODID = "examplemod";
+    public static final String MODID = "oddesseymod";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
     // Create a Deferred Register to hold Blocks which will all be registered under the "examplemod" namespace
@@ -96,7 +96,7 @@ public final class ExampleMod {
                 output.accept(SIRENS_LYRE.get());
             }).build());
 
-    public ExampleMod(FMLJavaModLoadingContext context) {
+    public OddesseyMod(FMLJavaModLoadingContext context) {
         var modBusGroup = context.getModBusGroup();
 
         // Register the commonSetup method for modloading
