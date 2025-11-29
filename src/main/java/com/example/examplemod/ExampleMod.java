@@ -39,6 +39,27 @@ public final class ExampleMod {
     // Create a Deferred Register to hold CreativeModeTabs which will all be registered under the "examplemod" namespace
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
 
+    // Traveller's Compass
+    public static final RegistryObject<Item> TRAVELLER_COMPASS = ITEMS.register("traveller_compass",
+            () -> new TravellerCompassItem(
+                    new Item.Properties().setId(ITEMS.key("traveller_compass"))
+            )
+    );
+
+    // Chrono Shard
+    public static final RegistryObject<Item> CHRONO_SHARD = ITEMS.register("chrono_shard",
+            () -> new ChronoShardItem(
+                    new Item.Properties().setId(ITEMS.key("chrono_shard"))
+            )
+    );
+
+    // Siren's Lyre
+    public static final RegistryObject<Item> SIRENS_LYRE = ITEMS.register("sirens_lyre",
+            () -> new SirensLyreItem(
+                    new Item.Properties().setId(ITEMS.key("sirens_lyre"))
+            )
+    );
+
     // Creates a new Block with the id "examplemod:example_block", combining the namespace and path
     public static final RegistryObject<Block> EXAMPLE_BLOCK = BLOCKS.register("example_block",
         () -> new Block(BlockBehaviour.Properties.of()
@@ -70,6 +91,9 @@ public final class ExampleMod {
             .icon(() -> EXAMPLE_ITEM.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
                 output.accept(EXAMPLE_ITEM.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
+                output.accept(TRAVELLER_COMPASS.get());
+                output.accept(CHRONO_SHARD.get());
+                output.accept(SIRENS_LYRE.get());
             }).build());
 
     public ExampleMod(FMLJavaModLoadingContext context) {
