@@ -38,7 +38,7 @@ public final class OddesseyMod {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
     // Create a Deferred Register to hold CreativeModeTabs which will all be registered under the "examplemod" namespace
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
-
+    /*
     // Traveller's Compass
     public static final RegistryObject<Item> TRAVELLER_COMPASS = ITEMS.register("traveller_compass",
             () -> new TravellerCompassItem(
@@ -59,7 +59,7 @@ public final class OddesseyMod {
                     new Item.Properties().setId(ITEMS.key("sirens_lyre"))
             )
     );
-
+    */
     // Creates a new Block with the id "examplemod:example_block", combining the namespace and path
     public static final RegistryObject<Block> EXAMPLE_BLOCK = BLOCKS.register("example_block",
         () -> new Block(BlockBehaviour.Properties.of()
@@ -91,9 +91,9 @@ public final class OddesseyMod {
             .icon(() -> EXAMPLE_ITEM.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
                 output.accept(EXAMPLE_ITEM.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
-                output.accept(TRAVELLER_COMPASS.get());
-                output.accept(CHRONO_SHARD.get());
-                output.accept(SIRENS_LYRE.get());
+                //output.accept(TRAVELLER_COMPASS.get());
+                //output.accept(CHRONO_SHARD.get());
+                //output.accept(SIRENS_LYRE.get());
             }).build());
 
     public OddesseyMod(FMLJavaModLoadingContext context) {
