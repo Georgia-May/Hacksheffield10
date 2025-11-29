@@ -110,7 +110,7 @@ public final class OddesseyMod {
         CREATIVE_MODE_TABS.register(modBusGroup);
 
         // Register the item to a creative tab
-        BuildCreativeModeTabContentsEvent.BUS.addListener(ExampleMod::addCreative);
+        BuildCreativeModeTabContentsEvent.BUS.addListener(OddesseyMod::addCreative);
 
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
